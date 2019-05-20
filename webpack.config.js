@@ -79,14 +79,14 @@ module.exports = (e, argv) => {
                 hash: true,
                 filename: "index.html", //target html
                 template: "./public/index.html", //source html
-                favicon: 'src/assets/images/favicon.png',
+                favicon: 'src/assets/img/favicon.png',
                 inject: true
             }),
             new HtmlWebPackPlugin({ //HACK TO HANDLE BROWSERROUTE ON GITHUB PAGES
                 hash: true,
                 filename: "404.html", //target html
                 template: "./public/index.html", //source html
-                favicon: 'src/assets/images/favicon.png',
+                favicon: 'src/assets/img/favicon.png',
                 inject: true
             }),
             new ExtractTextPlugin({
@@ -95,11 +95,11 @@ module.exports = (e, argv) => {
             new webpack.DefinePlugin(envKeys),
             new CopyWebpackPlugin([{
                     from: './src/assets/images/*.png',
-                    to: 'assets/images/[name].png'
+                    to: 'assets/img/[name].png'
                 },
                 {
                     from: './src/assets/images/*.svg',
-                    to: 'assets/images/[name].svg'
+                    to: 'assets/img/[name].svg'
                 },
                 {
                     from: './public/manifest.json',
