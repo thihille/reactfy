@@ -1,0 +1,24 @@
+label {
+  color: white;
+}
+.form-group {
+  display: block;
+  width: 80vw;
+  margin: 0 auto;
+}
+.form-group label {
+  font-family: 'Roboto', Arial;
+  font-weight: 300;
+  display:block;
+  width: 100%;
+}
+.form-group input {
+  width: 100%;
+  background: transparent;
+  border:none;
+  padding: 10px;
+  font-family: 'Roboto', Arial;
+  font-size: 48px;
+  color: #eee;
+  border-bottom:1px solid #eee;
+}
