@@ -8,7 +8,7 @@ label {
 }
 .form-group label {
   font-family: 'Roboto', Arial;
-  font-weight: 300;
+  font-weight: 500;
   display:block;
   width: 100%;
 }
@@ -18,7 +18,8 @@ label {
   border:none;
   padding: 10px;
   font-family: 'Roboto', Arial;
-  font-size: 48px;
+  font-size: 40px;
   color: #eee;
   border-bottom:1px solid #eee;
 }
+

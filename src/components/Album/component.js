@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
 import BotaoVoltar from '../BotaoVoltar';
-import resolvePath from '../../helpers/pathHelper';
+import Playlist from '../Playlist/component';
 
 // const imgNaoEncontrada = resolvePath('../assets/img/spotify.png');
 
@@ -39,13 +39,14 @@ class Album extends Component {
   render(){
     return (
       <Wrapper className="album">
-        <BotaoVoltar className='btn-back'>Voltar</BotaoVoltar>
+        <BotaoVoltar className="btn-back">Voltar</BotaoVoltar>
         <AlbumWrapper>
           <AlbumInfo>
             <img />
             <h3>Titulo</h3>
             <h4>Album</h4>
           </AlbumInfo>
+          <Playlist></Playlist>
         </AlbumWrapper>
       </Wrapper>
     )

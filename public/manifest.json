@@ -4,7 +4,7 @@
   "orientation": "portrait",
   "icons": [
     {
-      "src": "/reactfy/assets/img/spotify.png",
+      "src": "/reactfy/assets/img/favicon.png",
       "sizes": "any",
       "type": "image/png"
     }
