@@ -158,6 +158,8 @@ body {
   background: #171717;
   margin: 0;
   padding: 0;
+  outline: 0;
+  box-sizing: border-box;
 }
 .logotipo {
   position: absolute;
@@ -214,6 +216,22 @@ html {
   .col-10 {width: 83.33%;}
   .col-11 {width: 91.66%;}
   .col-12 {width: 100%;}
+}ul.albums {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+li.albumlist {
+  background-color: rgba(255,255,255,.01);
+  color: white;
+  margin: 2px 0;
+  cursor: pointer;
+}
+li.albumlist:hover {
+  background-color: rgba(255,255,255,.1);
+}
+li.albumlist > img {
+  vertical-align: middle;
 }label {
   color: white;
 }
