@@ -1,6 +1,8 @@
 import { combineReducers } from "redux";
-import { reducer as reduxFormReducer } from 'redux-form';
+import search from "./search";
+import albuns from "./albuns";
 
 export default combineReducers({
-  form:reduxFormReducer
+  search,
+  albuns
 })

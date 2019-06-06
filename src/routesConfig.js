@@ -1,5 +1,5 @@
-import PaginaPrincipal from './components/PaginaPrincipal/component';
-import Album from './components/Album/component';
+import PaginaPrincipal from './views/PaginaPrincipal';
+import Album from './views/Album';
 
 const routesConfig = [
   {
@@ -8,7 +8,7 @@ const routesConfig = [
     exact: true
   },
   {
-    path: "/album",
+    path: "/album/:id",
     component: Album,
     exact: true
   },

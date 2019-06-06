@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+
 const Wrapper = styled.section`
-  display:block;
+  display:none;
+  position:relative;
+  z-index:0;
 
   h3 {
     color: white;

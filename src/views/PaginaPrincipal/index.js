@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Busca from '../Busca/component';
-import AlbunsRecentes from '../AlbunsRecentes/component';
+import Busca from '../../components/Busca';
+import AlbunsRecentes from '../../components/AlbunsRecentes';
 
 const Wrapper = styled.section `
   display:block;

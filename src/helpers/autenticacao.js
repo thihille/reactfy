@@ -4,7 +4,6 @@ class Autenticacao {
   constructor() {}
   verificar = () => {
     const recuperarToken = this.tentativaRecuperacao();
-
     if (!recuperarToken) {
       this.spotifyWebsite();
     } else {
@@ -36,11 +35,8 @@ class Autenticacao {
     const expire = new Date();
 
     expire.setSeconds(expire.getSeconds() + parseInt(recuperarToken.expires_in));
-    if(recuperarToken.authorizationTime){
-      const expireDate = new Date(new Date(new Date(recuperarToken.authorizationTime)))
-    }else{
-      const expireDate = expire;
-    }
+    
+    const expireDate = recuperarToken.authorizationTime ? new Date(new Date(new Date(recuperarToken.authorizationTime))) : expire;
 
     const validade = now <= expireDate;
     return validade;
@@ -66,8 +62,11 @@ class Autenticacao {
   };
 
   tentativaRecuperacao = () => {
-    if (window.location.hash.split("#")[1]){
-      return extractQueryString(search);
+    let buscarToken = window.location.hash.split("#")[1];
+
+    if (buscarToken){
+
+      return extractQueryString(buscarToken);
     }else{
       const authorization = localStorage.getItem("authorization");
       return JSON.parse(authorization);

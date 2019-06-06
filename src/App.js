@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import routesConfig from './routesConfig';
 import Autenticacao from './helpers/autenticacao'
-import Logotipo from './components/logotipo/component';
+import Logotipo from './components/logotipo';
 import './App.css';
 
 class App extends Component {
   
   componentDidMount(){
-    // const autenticar = new Autenticacao();
-    // autenticar.verificar();
+    const autenticar = new Autenticacao();
+    autenticar.verificar();
   }
   
   render(){

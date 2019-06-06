@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
-import BotaoVoltar from '../BotaoVoltar';
-import Playlist from '../Playlist/component';
+import BotaoVoltar from '../../components/BotaoVoltar';
+import Playlist from '../../components/Playlist';
+
 
 // const imgNaoEncontrada = resolvePath('../assets/img/spotify.png');
 
 const Wrapper = styled.div `
   display:flex;
-
 `;
 
 const AlbumWrapper = styled.div`
   display: flex;
   flex-flow: row;
   width: 100%;
-
-  
 `;
 
 const AlbumInfo = styled.div`
@@ -30,10 +28,6 @@ const AlbumInfo = styled.div`
     max-width: 400px;
   }
 `;
-
-
-
-
 
 class Album extends Component {
   render(){
@@ -51,6 +45,8 @@ class Album extends Component {
       </Wrapper>
     )
   }
+
+  
 }
 
 export default Album;
