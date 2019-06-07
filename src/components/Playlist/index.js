@@ -28,14 +28,14 @@ class Playlist extends Component {
     return (
     <div>
       <CapaAlbum>
-        <img src={this.props.data.album.album_data != undefined ? this.props.data.album.album_data.data.images[1].url : ''} />
-        <h3>{this.props.data.album.album_data != undefined ? this.props.data.album.album_data.data.artists[0].name + ' - ' + this.props.data.album.album_data.data.name : ''}</h3>
+        <img src={this.props.data.album.data != undefined ? this.props.data.album.data.data.images[1].url : ''} />
+        <h3>{this.props.data.album.data != undefined ? this.props.data.album.data.data.artists[0].name + ' - ' + this.props.data.album.album_data.data.name : ''}</h3>
       </CapaAlbum>
       <ul>
-        
-          {this.props.data.album.album_data != undefined ? (
-            this.props.data.album.album_data.data.tracks.items.map(musica => (
-              <li>{musica.name}</li>
+        {console.log(this.props.data.album.data)}
+          {this.props.data.album.data != undefined ? (
+            this.props.data.album.data.data.tracks.items.map(musica => (
+              <li key={musica.id}>{musica.name}</li>
             ))
             ) : ''}
         

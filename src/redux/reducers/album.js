@@ -19,7 +19,7 @@ export default (state = INITIAL_STATE, action) => {
     case FETCH_ALBUM_SUCCESS:
       return {
         ...state,
-        album_data: action.payload,
+        data: action.payload,
         loading: false
       };
     default:
