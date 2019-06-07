@@ -1,9 +1,8 @@
 export const FETCHING_ALBUM = '//album//FETCHING_ALBUM';
 export const FETCH_ALBUM_SUCCESS = '//album//FETCH_ALBUM_SUCCESS';
-export const FETCH_ALBUNS_ERROR = '//albunm//FETCH_ALBUM_ERROR';
+export const FETCH_ALBUM_ERROR = '//album//FETCH_ALBUM_ERROR';
 
 import request from '../../helpers/request';
-import { setIdAlbum } from '../actions/idalbum';
 
 export const fetchingAlbum = payload => ({
   type: FETCHING_ALBUM,
@@ -15,15 +14,13 @@ export const fetchAlbumSuccess = payload => ({
   payload
 });
 
-export const fetchAlbum = payload => {
+export const fetchAlbumId = payload => {
   let id = payload;
-  debugger;
   return (dispatch) => {
     dispatch(fetchingAlbum(true));
-    // dispatch(setIdAlbum(id));
-
+    
     request.get(`albums/${id}`).then((data) => {
-      console.log(data);
+      // console.log(data);
       dispatch(fetchAlbumSuccess(data));
     }).catch((error) => {
       console.log(error);

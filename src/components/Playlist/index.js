@@ -1,45 +1,56 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import Autenticacao from '../../helpers/autenticacao';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 import { withRouter } from "react-router-dom";
-
-import Autenticacao from '../../helpers/autenticacao';
+import styled from 'styled-components';
 import {
-  fetchAlbum,
+  fetchAlbumId,
 } from '../../redux/actions/album';
 
-class Playlist extends Component {
-  constructor(props, album, fetchAlbum) {
-    super(props);
 
-    this.state = {
-      id: ""
-    };
-  }
+const CapaAlbum = styled.section`
+  display:block;
+  position:relative;
+  z-index:0;
+`;
+
+class Playlist extends Component {
 
   componentWillMount() {
     const autenticar = new Autenticacao();
     autenticar.verificar();
-
     const { id } = this.props.match.params;
-    fetchAlbum(id);
+    this.props.fetchAlbumId(id);
   }
 
-  render(){
-    return(
+  render() {
+    return (
+    <div>
+      <CapaAlbum>
+        <img src={this.props.data.album.album_data != undefined ? this.props.data.album.album_data.data.images[1].url : ''} />
+        <h3>{this.props.data.album.album_data != undefined ? this.props.data.album.album_data.data.artists[0].name + ' - ' + this.props.data.album.album_data.data.name : ''}</h3>
+      </CapaAlbum>
       <ul>
-        <li>{ this.album }</li>
+        
+          {this.props.data.album.album_data != undefined ? (
+            this.props.data.album.album_data.data.tracks.items.map(musica => (
+              <li>{musica.name}</li>
+            ))
+            ) : ''}
+        
       </ul>
+    </div>
     )
   }
 }
 
 const mapStateToProps = state => ({
-  album: state.id
+  data: state
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchAlbum: payload => dispatch(fetchAlbum(payload)),
+  fetchAlbumId: payload => dispatch(fetchAlbumId(payload)),
 });
 
 export default connect(
